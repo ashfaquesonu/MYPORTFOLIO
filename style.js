@@ -11,7 +11,7 @@ function sentMail() {
             number: document.getElementById("input_number").value,
             address: document.getElementById("input_details").value,
         };
-        const serviceID = "service_btlwrap";
+        const serviceID = "service_7k60nqh";
         const templateID = "template_r10g6c1";
         emailjs.send(serviceID, templateID, params)
             .then(function
@@ -42,4 +42,14 @@ function sentMail() {
     } else if (document.getElementById("input_number").value.length > 10) {
         alert("Enter 10 Digit Number");
     }
+}
+
+function validateForm() {
+    const number = document.getElementById("input_number").value;
+    if (number.length !== 10) {
+        alert("Enter a 10-digit mobile number.");
+        return false; // Prevent form submission if the number is not 10 digits
+    }
+    alert("Your Message Sent Successfully");
+    return true; // Allow form submission if validation passes
 }
